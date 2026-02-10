@@ -13,16 +13,20 @@ from data.ciudades import original_cities, waypoints, all_nodes, distance, dista
 
 # ------------------ PATH ------------------
 
-# 1. Carpeta principal donde está main.py
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+def resource_path(relative_path):
+    """ Obtiene la ruta absoluta de los recursos, compatible con PyInstaller """
+    try:
+        # Carpeta temporal de PyInstaller
+        base_path = sys._MEIPASS
+    except Exception:
+        # Carpeta normal de desarrollo
+        base_path = os.path.dirname(os.path.abspath(__file__))
+    return os.path.join(base_path, relative_path)
 
-# 2. Carpeta de utilidades
-UTILS_DIR = os.path.join(BASE_DIR, "utils")
-
-# 3. Definimos las rutas apuntando ADENTRO de utils
-MAP_IMAGE = os.path.join(UTILS_DIR, "mapa_venezuela.png")
-NODES_FILE = os.path.join(UTILS_DIR, "node_positions.json")
-ROADS_FILE = os.path.join(UTILS_DIR, "roads_config.json")
+#rutas usando la función resource_path
+MAP_IMAGE = resource_path(os.path.join("utils", "mapa_venezuela.png"))
+NODES_FILE = resource_path(os.path.join("utils", "node_positions.json"))
+ROADS_FILE = resource_path(os.path.join("utils", "roads_config.json"))
 
 # ------------------ CONFIG ------------------
 NODE_RADIUS = 7
