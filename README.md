@@ -4,7 +4,7 @@ Este es un proyecto universitario desarrollado para la **Universidad de Oriente 
 
 ## 🎓 Información del Proyecto
 * **Institución:** Universidad de Oriente (UDO)
-* **Asignatura:** Bases de Datos
+* **Asignatura:** Estructura de Datos
 * **Objetivo:** Implementación del Algoritmo de Dijkstra para la optimización de rutas en un grafo ponderado.
 
 ---
